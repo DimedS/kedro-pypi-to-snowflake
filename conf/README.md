@@ -1,26 +1,36 @@
-# What is this for?
+# Project Overview
 
-This folder should be used to store configuration files used by Kedro or by separate tools.
+This project retrieves all PyPI download data for Kedro packages from the ClickHouse server `clickpy-clickhouse.clickhouse.com` and saves the data to Snowflake storage. The pipeline is built using Kedro to ensure efficient data processing and handling.
 
-This file can be used to provide users with instructions for how to reproduce local configuration with their own credentials. You can edit the file however you like, but you may wish to retain the information below and add your own section in the [Instructions](#Instructions) section.
+## Configuration Overview
 
-## Local configuration
+This folder contains configuration files required by Kedro or other tools used in the project. Please follow the instructions below to ensure proper setup for local and base configurations.
 
-The `local` folder should be used for configuration that is either user-specific (e.g. IDE configuration) or protected (e.g. security keys).
+### Local Configuration
 
-> *Note:* Please do not check in any local configuration to version control.
+The `local` folder should contain user-specific or sensitive configurations, such as security keys, credentials, or development environment settings.
 
-## Base configuration
+> **Note:** Do not commit any files in the `local` folder to version control.
 
-The `base` folder is for shared configuration, such as non-sensitive and project-related configuration that may be shared across team members.
+### Base Configuration
 
-WARNING: Please do not put access credentials in the base configuration folder.
+The `base` folder is intended for shared configuration that is non-sensitive and relevant to all team members working on the project. This might include project settings, non-sensitive environment variables, and shared resources.
+
+> **WARNING:** Do not store any sensitive information, such as access credentials or private keys, in the `base` folder.
 
 ## Instructions
 
-
-
+1. **Local Setup:**
+   - Place your local configuration files, such as Snowflake credentials or ClickHouse access keys, in the `local` folder. 
+   - Ensure these files are not tracked by version control to maintain security.
+   
+2. **Base Configuration Setup:**
+   - Ensure that non-sensitive, shared configurations (e.g., database connection details without credentials) are stored in the `base` folder.
+   
+3. **Running the Project:**
+   - After configuring the local environment with your credentials, run the Kedro pipeline to retrieve and save PyPI download data from ClickHouse to Snowflake.
+   - Ensure your Snowflake instance is properly set up and the necessary tables are available for data storage.
 
 ## Need help?
 
-[Find out more about configuration from the Kedro documentation](https://docs.kedro.org/en/stable/kedro_project_setup/configuration.html).
+For more detailed instructions on configuration and setup, refer to the [Kedro documentation](https://docs.kedro.org/en/stable/kedro_project_setup/configuration.html).
