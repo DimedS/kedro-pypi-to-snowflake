@@ -1,7 +1,8 @@
-ipython>=8.10
-jupyterlab>=3.0
+clickhouse-connect>=0.8.0
 kedro~=0.19.8
-notebook
+kedro-datasets[snowflake]
+pandas
+pyarrow
 pytest~=7.2
 pytest-cov~=3.0
 pytest-mock>=1.7.1, <2.0

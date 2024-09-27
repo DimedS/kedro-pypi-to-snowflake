@@ -3,7 +3,9 @@ from __future__ import annotations
 
 from kedro.framework.project import find_pipelines
 from kedro.pipeline import Pipeline
+
 from kedro_pypi_to_snowflake.pipelines.etl import pipeline as etl_pipeline
+
 
 def register_pipelines() -> dict[str, Pipeline]:
     """Register the project's pipelines.

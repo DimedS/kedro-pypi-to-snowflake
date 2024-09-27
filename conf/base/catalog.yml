@@ -2,7 +2,7 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
-kedro_all_total_downloads:
+clickhouse_pypi_downloads:
   type: kedro_pypi_to_snowflake.datasets.clickhouse_dataset.ClickHouseDataset
   sql: "SELECT * FROM pypi_downloads_per_day_by_version_by_installer_by_type WHERE project LIKE 'kedro%'"
   host: "clickpy-clickhouse.clickhouse.com"
@@ -11,9 +11,9 @@ kedro_all_total_downloads:
   secure: True
   port: 443
 
-snowflake_data:
+snowflake_pypi_downloads:
   type: kedro_pypi_to_snowflake.datasets.snowpark_dataset.SnowparkTableDataset
-  table_name: "TEST_aggregates2"  
+  table_name: "aggregated_downloads"  
   database: "KEDRO_BI_DB"  # Snowflake database
   schema: "PYPI"  # Schema inside the database
   credentials: snowflake_credentials

@@ -1,6 +1,7 @@
 import clickhouse_connect
-from kedro.io import AbstractDataset
 import pyarrow as pa
+from kedro.io import AbstractDataset
+
 
 class ClickHouseDataset(AbstractDataset[pa.Table, pa.Table]):
     def __init__(self, sql: str, host: str, username: str, database: str, secure: bool = True, port: int = 443):

@@ -5,8 +5,8 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-import snowflake.snowpark as sp
 import pandas as pd
+import snowflake.snowpark as sp
 from kedro.io.core import AbstractDataset, DatasetError
 
 logger = logging.getLogger(__name__)
@@ -226,7 +226,7 @@ class SnowparkTableDataset(AbstractDataset):
             self._schema,
             self._table_name,
         ]
-        
+
         # Check if the input is a Pandas DataFrame and convert it to Snowpark DataFrame
         if isinstance(data, pd.DataFrame):
             # Convert the Pandas DataFrame to a Snowpark DataFrame
