@@ -14,6 +14,7 @@ clickhouse_pypi_downloads:
 snowflake_pypi_downloads:
   type: kedro_pypi_to_snowflake.datasets.snowpark_dataset.SnowparkTableDataset
   table_name: "aggregated_downloads"  
+  warehouse: "KEDRO_BI_WH_WH"
   database: "KEDRO_BI_DB"  # Snowflake database
   schema: "PYPI"  # Schema inside the database
   credentials: snowflake_credentials
