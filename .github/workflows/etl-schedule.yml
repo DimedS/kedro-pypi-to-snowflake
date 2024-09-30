@@ -21,8 +21,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install uv
+        uv pip install -r requirements.txt
 
     - name: Run Kedro pipeline
+      env:
+        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
-        kedro run
+        kedro run --env=gha

@@ -9,6 +9,8 @@ conf/local/**
 # ignore potentially sensitive credentials files
 conf/**/*credentials*
 
+!conf/gha/credentials.yml
+
 # ignore everything in the following folders
 data/**
 logs/**
