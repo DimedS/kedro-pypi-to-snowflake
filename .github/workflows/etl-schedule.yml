@@ -1,0 +1,28 @@
+name: Kedro Pipeline CI/CD
+
+# Run on a schedule - daily at midnight
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Run daily at midnight
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  run-kedro:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install -r src/requirements.txt
+
+    - name: Run Kedro pipeline
+      run: |
+        kedro run
