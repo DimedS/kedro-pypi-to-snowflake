@@ -29,4 +29,5 @@ jobs:
         SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
         SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
+        printenv | grep SNOWFLAKE
         kedro run --env=gha
