@@ -3,7 +3,7 @@ name: Kedro Pipeline CI/CD
 # Run on a schedule - daily at midnight
 on:
   schedule:
-    - cron: "15 2 * * *"  # Run daily at 2:15 AM
+    - cron: "15 6 * * *"  # Run daily at 6:15 AM
   workflow_dispatch:  # Allows manual triggering
 
 jobs:

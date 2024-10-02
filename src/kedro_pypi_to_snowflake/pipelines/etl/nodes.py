@@ -7,5 +7,6 @@ import pyarrow as pa
 
 def convert_arrow_to_snowpark(data: pa.Table):
     df = data.to_pandas()
-    df['date'] = pd.to_datetime(df['date'], unit='D', origin='1970-01-01')
+    df['date'] = pd.to_datetime(df['date'], unit='D', origin='1970-01-01').dt.date
+    df.columns = df.columns.str.upper()
     return df
